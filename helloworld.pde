@@ -15,15 +15,15 @@ void setup() {
   size(820, 312);
   frameRate(10);
 
-  font = createFont("FiraMono-Bold.ttf", 100);
+  font = createFont("fonts/FiraMono-Bold.ttf", 100);
   textFont(font);
 
-  bgImage = loadImage("bg.png");
+  bgImage = loadImage("images/bg.png");
   bgImage.resize(width,height);
 
   currentString = includeBraga;
 
-  gifExport = new GifMaker(this, "includebraga.gif");
+  gifExport = new GifMaker(this, "gif/includebraga.gif");
   gifExport.setRepeat(0);
 }
 
@@ -52,10 +52,10 @@ void textAnimation() {
     currentString = new String(glitchString(currentString, 1));
   }
   else if(time > 40 && time < 80) {
-    currentString = new String(transformText(currentString, helloWorld, true));
+    currentString = new String(transformText(currentString, helloWorld));
   }
   else if(time > 80 && !currentString.equals(includeBraga)) {
-    currentString = new String(transformText(currentString, includeBraga, false));
+    currentString = new String(transformText(currentString, includeBraga));
   }
   else if(time > 80 && currentString.equals(includeBraga)) {
     gifExport.finish();
@@ -85,7 +85,7 @@ char[] glitchString(String string, int numberOfChars){
   return newString;
 }
 
-char[] transformText(String fromString, String toString, Boolean doIt) {
+char[] transformText(String fromString, String toString) {
   char[] newString = fromString.toCharArray();
 
   int randomChar;

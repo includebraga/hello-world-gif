@@ -1,6 +1,8 @@
-# Hello world
+# Hello, world!
 
 A tiny Processing sketch to make our 'hello, world!' gif!
+
+![include-braga](gif/includebraga.gif)
 
 ## Dependencies
 
